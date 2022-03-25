@@ -1,0 +1,14 @@
+2022-01-27T10:39:06+00:00
+Running ./Lookup_benchmark
+Run on (10 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x10)
+  L1 Instruction 32 KiB (x10)
+  L2 Unified 1024 KiB (x10)
+  L3 Unified 14080 KiB (x1)
+Load Average: 1.00, 1.01, 0.93
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"Loadfactor","Totlookup","UnsuccesRatio"
+"lookupBench<Chained24<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>/0/1",1,0.663703,0.663695,s,,,,,,0.35,8.64805e+06,0.0300001
+"lookupBench<Chained24<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>/1/1",1,0.943575,0.943552,s,,,,,,0.35,1.11848e+07,0.25
+"lookupBench<Chained24<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>/2/1",1,1.50398,1.50394,s,,,,,,0.35,1.67772e+07,0.5
