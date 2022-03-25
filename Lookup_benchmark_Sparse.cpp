@@ -148,6 +148,7 @@ static void lookupBench(benchmark::State &s)
         }
     }
     delete[] lookuparray;
+    ratio = (double)unsucclookup/index;
     if (ratio < 0.10)
     {
         ratio = 0;
@@ -158,7 +159,7 @@ static void lookupBench(benchmark::State &s)
     }
     s.counters["Totlookup"] = index;
     s.counters["Loadfactor"] = loadfactor;
-    s.counters["UnsuccesRatio"] = unsucclookup/indx;
+    s.counters["UnsuccesRatio"] = ratio;
 }
 
 
