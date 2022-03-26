@@ -3,17 +3,16 @@
 #include "Quadraticprobing.h"
 #include "Chained8.h"
 #include "Chained24.h"
-#include "Cuckoo.h"
+#include "MCuckoo.h"
 #include "RH.h"
 #include <array>
-#include "Hashfunction.h"
+#include "HashFunction.h"
 #include "Allocator.h"
 #include <iostream>
 #include <fstream>
 #include <math.h>
 #include <algorithm>
-#include "Node.h"
-#include "Cnode.h"
+#include <string>
 #include <benchmark/benchmark.h>
 
 using namespace std;
@@ -28,17 +27,19 @@ template <class Table>
 static void insertionBench(benchmark::State &s)
 {
     std::uniform_int_distribution<uint64_t> distrsparse;
-    std::random_device rd;
     std::mt19937_64 engkey;
     std::mt19937_64 engvalue;
 
     std::vector<uint64_t> extrakeys;
     std::vector<uint64_t> insertkeys;
-    uint64_t key = 2;
+
+    uint64_t key = 1;
     uint64_t value = 1;
     uint64_t totinsert = 0;
     double tableloadfactor = 0;
     uint64_t succinsert = 0;
+
+    uint64_t index = 0;
 
     int i = s.range(0);
     int ranges[6] = {25, 35, 45, 50, 70, 90};
@@ -47,15 +48,13 @@ static void insertionBench(benchmark::State &s)
 
 while (insertkeys.size() < capacity*loadfactor)
     {
-        key = distrsparse(engkey);
         insertkeys.push_back(key);
-//	key++;
+        key++;
     }
 while (extrakeys.size() < capacity*0.04)
     {
-        key = distrsparse(engkey);
         extrakeys.push_back(key);
-//	key++;
+        key++;
     }
 
     if (Table::getName() == "Chained8")
@@ -90,11 +89,11 @@ while (extrakeys.size() < capacity*0.04)
     std::shuffle(insertkeys.begin(), insertkeys.end(), engvalue);
     std::shuffle(extrakeys.begin(), extrakeys.end(), engvalue);
 
-    uint64_t d = 0;
+    index = 0;
    while (tableloadfactor < loadfactor)
     {
-        key = insertkeys[d];
-        d++;
+        key = insertkeys[index];
+        index++;
         returnpair = table.emplace(key, key);
         if (returnpair.second == true)
         {
@@ -104,33 +103,33 @@ while (extrakeys.size() < capacity*0.04)
 
     insertkeys.clear();
 
-      d = 0;
-    uint64_t *myvector = new uint64_t[extrakeys.size()];
-    while(d<extrakeys.size()){
-        myvector[d] = extrakeys[d];
-        d++;
+      index = 0;
+    uint64_t *insertarray = new uint64_t[extrakeys.size()];
+    while(index<extrakeys.size()){
+        insertarray[index] = extrakeys[index];
+        index++;
     }
-    uint64_t size = d;
+    uint64_t size = index;
     extrakeys.clear();
 
-    d = 0;
-    uint64_t k =0;
+    index = 0;
 
     for (auto _ : s)
     {
-        while(d<size)
+        while(index<size)
         {
-	    key = myvector[d];
-	    d++;
+	    key = insertarray[index];
+	    index++;
             returnpair = table.emplace(key, key);
 	    if(returnpair.second==true){
-		k++;
+		succinsert++;
 	   }
 	   
         }
     }
-    delete[] myvector;
-    s.counters["Totinsert"] = d;
+    delete[] insertarray;
+    cout<<succinsert<<endl;
+    s.counters["Totinsert"] = index;
     s.counters["Loadfactor"] = loadfactor;
 
 }
