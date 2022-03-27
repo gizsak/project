@@ -17,7 +17,7 @@
 
 using namespace std;
 
-uint64_t capacity = pow(2, 26);
+uint64_t capacity = pow(2, 27);
 uint64_t bulkcapacity;
 
 template <class Table>
@@ -82,7 +82,7 @@ static void lookupBenchSucces(benchmark::State &s)
     }
 
     Table table(capacity, bulkcapacity);
-    capacity = pow(2, 26);
+    capacity = pow(2, 27);
 
 
     index = 0;
@@ -129,17 +129,38 @@ static void lookupBenchSucces(benchmark::State &s)
 
 }
 
-BENCHMARK(lookupBenchSucces<Linearprobing<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->DenseRange(0, 5)->Unit(benchmark::kSecond);
-BENCHMARK(lookupBenchSucces<Linearprobing<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->DenseRange(0, 2)->Unit(benchmark::kSecond);
-/*BENCHMARK(lookupBenchSucces<Quadraticprobing<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->DenseRange(3, 5)->Unit(benchmark::kSecond);
-BENCHMARK(lookupBenchSucces<Quadraticprobing<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->DenseRange(3, 5)->Unit(benchmark::kSecond);
-BENCHMARK(lookupBenchSucces<RH<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->DenseRange(3, 5)->Unit(benchmark::kSecond);
-BENCHMARK(lookupBenchSucces<RH<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->DenseRange(3, 5)->Unit(benchmark::kSecond);
-BENCHMARK(lookupBenchSucces<Cuckoo<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->DenseRange(3, 5)->Unit(benchmark::kSecond);
-// BENCHMARK(lookupBenchSucces<Cuckoo<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->DenseRange(3, 5)->Unit(benchmark::kSecond);
-*/BENCHMARK(lookupBenchSucces<Chained8<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->DenseRange(0, 2)->Unit(benchmark::kSecond);
-BENCHMARK(lookupBenchSucces<Chained8<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->DenseRange(0, 2)->Unit(benchmark::kSecond);
-BENCHMARK(lookupBenchSucces<Chained24<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->DenseRange(0, 2)->Unit(benchmark::kSecond);
-BENCHMARK(lookupBenchSucces<Chained24<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Linearprobing<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("LPMultAdd")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Linearprobing<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("LPMultAdd")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Linearprobing<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("LPMultAdd")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<Linearprobing<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("LPTab")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Linearprobing<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("LPTab")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Linearprobing<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("LPTab")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<Quadraticprobing<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPMultAdd")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Quadraticprobing<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPMultAdd")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<Quadraticprobing<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPTab")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Quadraticprobing<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPTab")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<RH<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMultAdd")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<RH<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMultAdd")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<RH<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHTab")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<RH<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHTab")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<Chained8<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("Chained8MultAdd")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Chained8<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("Chained8Tab")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<Chained24<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("Chained24MultAdd")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Chained24<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("Chained24Tab")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+
+
+BENCHMARK(insertionBench<MCuckoo<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("CuckooMultAdd")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<MCuckoo<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("CuckooMultAdd")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<MCuckoo<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("CuckooTab")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<MCuckoo<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("CuckooTab")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+
 
 BENCHMARK_MAIN();

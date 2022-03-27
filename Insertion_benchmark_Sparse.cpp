@@ -17,9 +17,8 @@
 
 using namespace std;
 
-uint64_t capacity = pow(2, 30);
+uint64_t capacity = pow(2, 27);
 uint64_t bulkcapacity;
-
 
 pair<Node<uint64_t, uint64_t> *, bool> returnpair;
 
@@ -32,6 +31,7 @@ static void insertionBench(benchmark::State &s)
 
     std::vector<uint64_t> extrakeys;
     std::vector<uint64_t> insertkeys;
+    std::vector<uint64_t> totinsertkeys;
 
     uint64_t key = 1;
     uint64_t value = 1;
@@ -45,28 +45,33 @@ static void insertionBench(benchmark::State &s)
     int ranges[6] = {25, 35, 45, 50, 70, 90};
     double loadfactor = (double)ranges[i] / 100;
 
-
-while (insertkeys.size() < capacity*loadfactor)
+    while (insertkeys.size() < capacity * loadfactor)
     {
         key = distrsparse(engkey);
         insertkeys.push_back(key);
     }
-while (extrakeys.size() < capacity*0.04)
+   
+    while (extrakeys.size() < capacity * 0.09)
     {
         key = distrsparse(engkey);
         extrakeys.push_back(key);
     }
+    totinsertkeys.reserve(extrakeys.size());
+    // totinsertkeys.insert(totinsertkeys.end(), insertkeys.begin(), insertkeys.end());
+    totinsertkeys.insert(totinsertkeys.end(), extrakeys.begin(), extrakeys.end());
+    
+    extrakeys.clear();
 
     if (Table::getName() == "Chained8")
     {
         if (loadfactor == 0.25 || loadfactor == 0.45)
         {
-            bulkcapacity = capacity/4;
+            bulkcapacity = capacity / 4;
             capacity = capacity / 2;
         }
         else
         {
-            bulkcapacity = capacity/2;
+            bulkcapacity = capacity / 2;
             capacity = capacity;
         }
     }
@@ -84,13 +89,14 @@ while (extrakeys.size() < capacity*0.04)
         }
     }
     Table table(capacity, bulkcapacity);
-    capacity = pow(2, 30);
+    capacity = pow(2, 27);
 
     std::shuffle(insertkeys.begin(), insertkeys.end(), engvalue);
-    std::shuffle(extrakeys.begin(), extrakeys.end(), engvalue);
+    // std::shuffle(extrakeys.begin(), extrakeys.end(), engvalue);
+    std::shuffle(totinsertkeys.begin(), totinsertkeys.end(), engvalue);
 
     index = 0;
-   while (tableloadfactor < loadfactor)
+    while (tableloadfactor < loadfactor)
     {
         key = insertkeys[index];
         index++;
@@ -103,35 +109,34 @@ while (extrakeys.size() < capacity*0.04)
 
     insertkeys.clear();
 
-      index = 0;
-    uint64_t *insertarray = new uint64_t[extrakeys.size()];
-    while(index<extrakeys.size()){
-        insertarray[index] = extrakeys[index];
+    index = 0;
+    uint64_t *insertarray = new uint64_t[totinsertkeys.size()];
+    while (index < totinsertkeys.size())
+    {
+        insertarray[index] = totinsertkeys[index];
         index++;
     }
     uint64_t size = index;
-    extrakeys.clear();
+    totinsertkeys.clear();
 
     index = 0;
 
     for (auto _ : s)
     {
-        while(index<size)
+        while (index < size)
         {
-	    key = insertarray[index];
-	    index++;
+            key = insertarray[index];
+            index++;
             returnpair = table.emplace(key, key);
-	    if(returnpair.second==true){
-		succinsert++;
-	   }
-	   
+            if (returnpair.second == true)
+            {
+                succinsert++;
+            }
         }
     }
     delete[] insertarray;
-    cout<<succinsert<<endl;
     s.counters["Totinsert"] = index;
     s.counters["Loadfactor"] = loadfactor;
-
 }
 
 BENCHMARK(insertionBench<Linearprobing<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("LPMult")->DenseRange(0, 2)->Unit(benchmark::kSecond);
@@ -149,16 +154,46 @@ BENCHMARK(insertionBench<Quadraticprobing<uint64_t, uint64_t, Murmur64, BulkAllo
 BENCHMARK(insertionBench<Quadraticprobing<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPMurmur")->DenseRange(5, 5)->Unit(benchmark::kSecond);
 
 BENCHMARK(insertionBench<RH<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMult")->DenseRange(3, 4)->Unit(benchmark::kSecond);
-BENCHMARK(insertionBench<RH<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMult")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+//BENCHMARK(insertionBench<RH<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMult")->DenseRange(5, 5)->Unit(benchmark::kSecond);
 
 BENCHMARK(insertionBench<RH<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMurmur")->DenseRange(3, 4)->Unit(benchmark::kSecond);
-BENCHMARK(insertionBench<RH<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMurmur")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+//BENCHMARK(insertionBench<RH<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMurmur")->DenseRange(5, 5)->Unit(benchmark::kSecond);
 
-BENCHMARK(insertionBench<Chained8<uint64_t, uint64_t, MultiplyShift,Allocator<uint64_t, uint64_t>>>)->Name("Chained8Mult")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Chained8<uint64_t, uint64_t, MultiplyShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained8Mult")->DenseRange(0, 2)->Unit(benchmark::kSecond);
 BENCHMARK(insertionBench<Chained8<uint64_t, uint64_t, Murmur64, Allocator<uint64_t, uint64_t>>>)->Name("Chained8Murmur")->DenseRange(0, 2)->Unit(benchmark::kSecond);
-
 
 BENCHMARK(insertionBench<Chained24<uint64_t, uint64_t, MultiplyShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained24Mult")->DenseRange(0, 2)->Unit(benchmark::kSecond);
 BENCHMARK(insertionBench<Chained24<uint64_t, uint64_t, Murmur64, Allocator<uint64_t, uint64_t>>>)->Name("Chained24Murmur")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<Linearprobing<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("LPMultAdd")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Linearprobing<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("LPMultAdd")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Linearprobing<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("LPMultAdd")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<Linearprobing<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("LPTab")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Linearprobing<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("LPTab")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Linearprobing<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("LPTab")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<Quadraticprobing<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPMultAdd")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Quadraticprobing<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPMultAdd")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<Quadraticprobing<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPTab")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Quadraticprobing<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPTab")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<RH<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMultAdd")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+//BENCHMARK(insertionBench<RH<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMultAdd")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<RH<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHTab")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+//BENCHMARK(insertionBench<RH<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHTab")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<Chained8<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("Chained8MultAdd")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Chained8<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("Chained8Tab")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<Chained24<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("Chained24MultAdd")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Chained24<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("Chained24Tab")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+
+//BENCHMARK(insertionBench<MCuckoo<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("CuckooMult")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+
+//BENCHMARK(insertionBench<MCuckoo<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("CuckooMultAdd")->DenseRange(3, 4)->Unit(benchmark::kSecond);
+//BENCHMARK(insertionBench<MCuckoo<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("CuckooTab")->DenseRange(3, 4)->Unit(benchmark::kSecond);
 
 BENCHMARK_MAIN();
