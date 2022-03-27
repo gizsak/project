@@ -52,7 +52,7 @@ public:
 
 class MultiplyAddShift
 {
-
+	string name = "Mult";
 	uint64_t a;
 	uint32_t b;
 	uint64_t d = 0;
@@ -79,6 +79,10 @@ public:
 	{
 
 		return ((a * key + b) >> (64 - d));
+	}
+	string getName()
+	{
+		return name;
 	}
 };
 
@@ -112,7 +116,7 @@ class TabulationHashing
 {
 public:
 
-	
+	string name = "Tab";
 	uint64_t T[8][256];
 	TabulationHashing()
 	{
@@ -141,6 +145,10 @@ public:
 	void initialize(uint64_t capacity)
 	{
 		;
+	}
+	string getName()
+	{
+		return name;
 	}
 };
 

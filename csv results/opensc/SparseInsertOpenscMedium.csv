@@ -1,0 +1,47 @@
+2022-02-21T16:11:23+00:00
+Running ./SparseInsert
+Run on (10 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x10)
+  L1 Instruction 32 KiB (x10)
+  L2 Unified 1024 KiB (x10)
+  L3 Unified 14080 KiB (x1)
+Load Average: 0.09, 0.30, 0.28
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"Loadfactor","Totinsert"
+"tslRHMult/3",1,0.644975,0.644963,s,,,,,,0.5,8.05306e+06
+"tslRHMult/4",1,1.5441,1.54408,s,,,,,,0.7,8.05306e+06
+"tslRHMult/5",1,5.0278,5.02774,s,,,,,,0.9,8.05306e+06
+"tslRHMurmur/3",1,0.672274,0.67226,s,,,,,,0.5,8.05306e+06
+"tslRHMurmur/4",1,1.71064,1.71061,s,,,,,,0.7,8.05306e+06
+"tslRHMurmur/5",1,4.69038,4.69031,s,,,,,,0.9,8.05306e+06
+"robin_hoodRHMult/3",1,0.834976,0.834961,s,,,,,,0.5,8.05306e+06
+"robin_hoodRHMult/4",1,1.76283,1.76282,s,,,,,,0.7,8.05306e+06
+"robin_hoodRHMult/5",1,0.966561,0.966528,s,,,,,,0.9,8.05306e+06
+"robin_hoodRHMurmur/3",1,0.628095,0.628061,s,,,,,,0.5,8.05306e+06
+"robin_hoodRHMurmur/4",1,1.30868,1.30866,s,,,,,,0.7,8.05306e+06
+"robin_hoodRHMurmur/5",1,3.05992,3.05984,s,,,,,,0.9,8.05306e+06
+"tslQPMult/3",1,2.60067,2.60063,s,,,,,,0.5,8.05306e+06
+"tslQPMult/4",1,3.41188,3.41181,s,,,,,,0.7,8.05306e+06
+"tslQPMult/5",1,5.44337,5.44329,s,,,,,,0.9,8.05306e+06
+"tslQPMurmur/3",1,2.47159,2.47154,s,,,,,,0.5,8.05306e+06
+"tslQPMurmur/4",1,3.21445,3.21441,s,,,,,,0.7,8.05306e+06
+"tslQPMurmur/5",1,5.42779,5.4277,s,,,,,,0.9,8.05306e+06
+"sppQPMult/3",1,3.48644,3.48639,s,,,,,,0.5,8.05306e+06
+"sppQPMult/4",1,4.15923,4.15915,s,,,,,,0.7,8.05306e+06
+"sppQPMult/5",1,5.6615,5.6614,s,,,,,,0.9,8.05306e+06
+"sppQPMurmur/3",1,3.51816,3.51809,s,,,,,,0.5,8.05306e+06
+"sppQPMurmur/4",1,4.11486,4.11479,s,,,,,,0.7,8.05306e+06
+"sppQPMurmur/5",1,5.66238,5.66227,s,,,,,,0.9,8.05306e+06
+"gabrielQPMult/3",1,0.878431,0.878426,s,,,,,,0.5,8.05306e+06
+"gabrielQPMult/4",1,1.51102,1.51099,s,,,,,,0.7,8.05306e+06
+"gabrielQPMult/5",1,2.57494,2.57489,s,,,,,,0.9,8.05306e+06
+"gabrielQPMurmur/3",1,0.885709,0.885714,s,,,,,,0.5,8.05306e+06
+"gabrielQPMurmur/4",1,1.51056,1.51055,s,,,,,,0.7,8.05306e+06
+"gabrielQPMurmur/5",1,2.5724,2.77235,s,,,,,,0.9,8.05306e+06
+"gabrielRHMult/3",1,1.47275,1.47273,s,,,,,,0.5,8.05306e+06
+"gabrielRHMult/4",1,4.02348,4.02344,s,,,,,,0.7,8.05306e+06
+"gabrielRHMult/5",1,76.4077,76.4071,s,,,,,,0.9,8.05306e+06
+"gabrielRHMurmur/3",1,1.44189,1.44187,s,,,,,,0.5,8.05306e+06
+"gabrielRHMurmur/4",1,4.03733,4.03728,s,,,,,,0.7,8.05306e+06
+"gabrielRHMurmur/5",1,78.749,78.7485,s,,,,,,0.9,8.05306e+06

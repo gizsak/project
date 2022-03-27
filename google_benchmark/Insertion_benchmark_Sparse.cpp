@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
-#include "Linearprobing.h"
-#include "Quadraticprobing.h"
-#include "Chained8.h"
-#include "Chained24.h"
-#include "MCuckoo.h"
-#include "RH.h"
+#include "../src/Linearprobing.h"
+#include "../src/Quadraticprobing.h"
+#include "../src/Chained8.h"
+#include "../src/Chained24.h"
+#include "../src/MCuckoo.h"
+#include "../src/RH.h"
 #include <array>
-#include "HashFunction.h"
-#include "Allocator.h"
+#include "../src/HashFunction.h"
+#include "../src/Allocator.h"
 #include <iostream>
 #include <fstream>
 #include <math.h>
@@ -47,21 +47,21 @@ static void insertionBench(benchmark::State &s)
 
     while (insertkeys.size() < capacity * loadfactor)
     {
+        key = distrsparse(engkey);
         insertkeys.push_back(key);
-        key++;
     }
-
+   
     while (extrakeys.size() < capacity * 0.09)
     {
+        key = distrsparse(engkey);
         extrakeys.push_back(key);
-        key++;
     }
-
     totinsertkeys.reserve(extrakeys.size());
     // totinsertkeys.insert(totinsertkeys.end(), insertkeys.begin(), insertkeys.end());
     totinsertkeys.insert(totinsertkeys.end(), extrakeys.begin(), extrakeys.end());
-
+    
     extrakeys.clear();
+
     if (Table::getName() == "Chained8")
     {
         if (loadfactor == 0.25 || loadfactor == 0.45)
@@ -120,7 +120,7 @@ static void insertionBench(benchmark::State &s)
     totinsertkeys.clear();
 
     index = 0;
-    uint64_t stab = 0;
+
     for (auto _ : s)
     {
         while (index < size)
@@ -135,11 +135,9 @@ static void insertionBench(benchmark::State &s)
         }
     }
     delete[] insertarray;
-
     s.counters["Totinsert"] = index;
     s.counters["Loadfactor"] = loadfactor;
 }
-
 
 BENCHMARK(insertionBench<Linearprobing<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("LPMult")->DenseRange(0, 2)->Unit(benchmark::kSecond);
 BENCHMARK(insertionBench<Linearprobing<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("LPMult")->DenseRange(3, 4)->Unit(benchmark::kSecond);
