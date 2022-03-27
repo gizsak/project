@@ -27,7 +27,7 @@ public:
 		std::uniform_int_distribution<uint64_t> distr;
 		std::random_device rd;
 		//std::mt19937_64 eng(rd());
-		std::mt19937_64 eng
+		std::mt19937_64 eng;
 		a = distr(eng);
 		if (a % 2 == 0){
 			a = a - 1;
@@ -64,8 +64,8 @@ public:
 		std::uniform_int_distribution<uint64_t> distr;
 		std::uniform_int_distribution<uint32_t> distrb;
 		std::random_device rd;
-		std::mt19937_64 eng;
-		//std::mt19937_64 eng(rd());
+		//std::mt19937_64 eng;
+		std::mt19937_64 eng(rd());
 		a = distr(eng);
 		b = distrb(eng);
 		if (a % 2 == 0)
@@ -112,14 +112,14 @@ class TabulationHashing
 {
 public:
 
-	std::uniform_int_distribution<uint64_t> distr;
-	std::random_device rd;
-	//std::mt19937_64 eng(rd());
-	std::mt19937_64 eng;
 	
 	uint64_t T[8][256];
 	TabulationHashing()
 	{
+		std::uniform_int_distribution<uint64_t> distr;
+		std::random_device rd;
+		//std::mt19937_64 eng(rd());
+		std::mt19937_64 eng;
 
 		for (int i = 0; i < 8; i++)
 		{
