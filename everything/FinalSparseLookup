@@ -1,0 +1,32 @@
+2022-03-30T00:35:24+01:00
+Running ./FinalSparseLookupSmall
+Run on (10 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x10)
+  L1 Instruction 32 KiB (x10)
+  L2 Unified 1024 KiB (x10)
+  L3 Unified 14080 KiB (x1)
+Load Average: 0.28, 0.16, 0.26
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"Loadfactor","Totlookup","UnsuccesRatio"
+"CuckooMAdd/0/3/iterations:1",1,5.83732,5.8371,s,,,,,,0.5,4.47392e+07,0.25
+"CuckooMAdd/1/3/iterations:1",1,9.4651,9.46477,s,,,,,,0.5,6.71089e+07,0.5
+"CuckooMAdd/2/3/iterations:1",1,19.3865,19.3858,s,,,,,,0.5,1.34218e+08,0.75
+"CuckooMAdd/0/4/iterations:1",1,6.13414,6.13391,s,,,,,,0.7,4.47392e+07,0.25
+"CuckooMAdd/1/4/iterations:1",1,9.61313,9.61275,s,,,,,,0.7,6.71089e+07,0.5
+"CuckooMAdd/2/4/iterations:1",1,19.5526,19.5518,s,,,,,,0.7,1.34218e+08,0.75
+"CuckooMAdd/0/5/iterations:1",1,6.32051,6.32024,s,,,,,,0.9,4.47392e+07,0.25
+"CuckooMAdd/1/5/iterations:1",1,9.71419,9.7138,s,,,,,,0.9,6.71089e+07,0.5
+"CuckooMAdd/2/5/iterations:1",1,19.6495,19.6487,s,,,,,,0.9,1.34218e+08,0.75
+"CuckooMult/0/3/iterations:1",1,5.50216,5.50188,s,,,,,,0.5,4.47392e+07,0.25
+"CuckooMult/1/3/iterations:1",1,8.64188,8.64151,s,,,,,,0.5,6.71089e+07,0.5
+"CuckooMult/2/3/iterations:1",1,17.6881,17.6873,s,,,,,,0.5,1.34218e+08,0.75
+"CuckooMult/0/4/iterations:1",1,5.70829,5.70807,s,,,,,,0.7,4.47392e+07,0.25
+"CuckooMult/1/4/iterations:1",1,8.75424,8.75388,s,,,,,,0.7,6.71089e+07,0.5
+"CuckooMult/2/4/iterations:1",1,17.7737,17.7729,s,,,,,,0.7,1.34218e+08,0.75
+"CuckooMult/0/5/iterations:1",1,5.81448,5.81424,s,,,,,,0.9,4.47392e+07,0.25
+"CuckooMult/1/5/iterations:1",1,8.83251,8.83215,s,,,,,,0.9,6.71089e+07,0.5
+"CuckooMult/2/5/iterations:1",1,17.8672,17.8664,s,,,,,,0.9,1.34218e+08,0.75
+"CuckooTab/0/3/iterations:1",1,7.40698,7.40668,s,,,,,,0.5,4.47392e+07,0.25
+"CuckooTab/1/3/iterations:1",1,11.6809,11.6804,s,,,,,,0.5,6.71089e+07,0.5
+"CuckooTab/2/3/iterations:1",1,23.4746,23.4736,s,,,,,,0.5,1.34218e+08,0.75

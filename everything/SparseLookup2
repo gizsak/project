@@ -1,0 +1,24 @@
+2022-01-27T15:41:50+00:00
+Running ./Lookup_benchmark
+Run on (10 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x10)
+  L1 Instruction 32 KiB (x10)
+  L2 Unified 1024 KiB (x10)
+  L3 Unified 14080 KiB (x1)
+Load Average: 0.00, 0.07, 0.41
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"Loadfactor","Totlookup","UnsuccesRatio"
+"Chained8Mult/4/2",1,83.4569,83.4452,s,,,,,,0.45,8.38861e+08,100
+"Chained8Murmur/0/0",1,1.21574,1.21572,s,,,,,,0.25,8.64805e+06,0
+"Chained8Murmur/1/0",1,1.56829,1.56798,s,,,,,,0.25,1.11848e+07,0.25
+"Chained8Murmur/2/0",1,2.34699,2.34642,s,,,,,,0.25,1.67772e+07,0.5
+"Chained8Murmur/0/1",1,1.21094,1.21066,s,,,,,,0.35,8.64805e+06,0
+"Chained8Murmur/1/1",1,1.54092,1.54088,s,,,,,,0.35,1.11848e+07,0.25
+"Chained8Murmur/2/1",1,2.27224,2.27196,s,,,,,,0.35,1.67772e+07,0.5
+"Chained8Murmur/0/2",1,1.26812,1.26784,s,,,,,,0.45,8.64805e+06,0
+"Chained8Murmur/1/2",1,1.6276,1.62732,s,,,,,,0.45,1.11848e+07,0.25
+"Chained8Murmur/2/2",1,2.41883,2.41852,s,,,,,,0.45,1.67772e+07,0.5
+"Chained8Murmur/3/0",1,4.39065,4.38982,s,,,,,,0.25,3.35544e+07,0.75
+"Chained8Murmur/4/0",1,89.861,89.8478,s,,,,,,0.25,8.38861e+08,100
+"Chained8Murmur/3/1",1,4.28113,4.28108,s,,,,,,0.35,3.35544e+07,0.75

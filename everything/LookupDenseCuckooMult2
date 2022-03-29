@@ -1,0 +1,13 @@
+2022-03-27T20:41:28+01:00
+Running ./sparse
+Run on (10 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x10)
+  L1 Instruction 32 KiB (x10)
+  L2 Unified 1024 KiB (x10)
+  L3 Unified 14080 KiB (x1)
+Load Average: 0.25, 0.61, 0.69
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"Loadfactor","Totlookup","UnsuccesRatio"
+"CuckooMult/3/5",1,9.13494,9.13375,s,,,,,,0.9,6.71089e+07,0.75
+"CuckooMult/4/5",1,115.455,115.44,s,,,,,,0.9,8.38861e+08,100

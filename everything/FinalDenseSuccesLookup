@@ -1,0 +1,16 @@
+2022-03-30T00:11:33+01:00
+Running ./FinalDenseSuccesLookupSmall
+Run on (10 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x10)
+  L1 Instruction 32 KiB (x10)
+  L2 Unified 1024 KiB (x10)
+  L3 Unified 14080 KiB (x1)
+Load Average: 1.01, 0.73, 0.51
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"Loadfactor","Totlookup","UnsuccesRatio"
+"CuckooMAdd/3/iterations:1",1,0.310276,0.310253,s,,,,,,0.5,4.1943e+06,0
+"CuckooMAdd/4/iterations:1",1,0.405363,0.405344,s,,,,,,0.7,4.1943e+06,0
+"CuckooMAdd/5/iterations:1",1,0.465672,0.465657,s,,,,,,0.9,4.1943e+06,0
+"CuckooMult/3/iterations:1",1,0.381069,0.381052,s,,,,,,0.5,4.1943e+06,0
+"CuckooMult/4/iterations:1",1,0.399476,0.39946,s,,,,,,0.7,4.1943e+06,0
