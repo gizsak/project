@@ -1,0 +1,23 @@
+2022-03-29T17:28:23+01:00
+Running ./FinalInsertionSparseSmall
+Run on (10 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x10)
+  L1 Instruction 32 KiB (x10)
+  L2 Unified 1024 KiB (x10)
+  L3 Unified 14080 KiB (x1)
+Load Average: 0.08, 0.07, 0.30
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"Loadfactor","Totinsert"
+"QPMAddF/3/iterations:1",1,0.012909,0.012908,s,,,,,,0.5,167773
+"QPMAddF/4/iterations:1",1,0.0221235,0.0221234,s,,,,,,0.7,167773
+"QPMAddF/5/iterations:1",1,0.0401607,0.0401607,s,,,,,,0.9,167773
+"QPMultF/3/iterations:1",1,0.01288,0.0128799,s,,,,,,0.5,167773
+"QPMultF/4/iterations:1",1,0.0211056,0.0211045,s,,,,,,0.7,167773
+"QPMultF/5/iterations:1",1,0.0408528,0.0408527,s,,,,,,0.9,167773
+"QPMurmurF/3/iterations:1",1,0.0132908,0.0132903,s,,,,,,0.5,167773
+"QPMurmurF/4/iterations:1",1,0.0216931,0.0216926,s,,,,,,0.7,167773
+"QPMurmurF/5/iterations:1",1,0.0397159,0.0397149,s,,,,,,0.9,167773
+"QPTabF/3/iterations:1",1,0.0138824,0.0138813,s,,,,,,0.5,167773
+"QPTabF/4/iterations:1",1,0.0211486,0.0211393,s,,,,,,0.7,167773
+"QPTabF/5/iterations:1",1,0.0409053,0.0409053,s,,,,,,0.9,167773
