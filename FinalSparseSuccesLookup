@@ -1,4 +1,4 @@
-2022-03-29T21:15:28+01:00
+2022-03-29T23:31:59+01:00
 Running ./FinalSparseSuccesLookupSmall
 Run on (10 X 3200 MHz CPU s)
 CPU Caches:
@@ -6,15 +6,18 @@ CPU Caches:
   L1 Instruction 32 KiB (x10)
   L2 Unified 1024 KiB (x10)
   L3 Unified 14080 KiB (x1)
-Load Average: 0.99, 0.74, 0.48
+Load Average: 1.00, 0.71, 0.40
 ***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
 name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"Loadfactor","Totlookup","UnsuccesRatio"
-"CuckooMAdd/3/iterations:1",1,0.361145,0.361134,s,,,,,,0.5,4.1943e+06,0
-"CuckooMAdd/4/iterations:1",1,0.429781,0.429759,s,,,,,,0.7,4.1943e+06,0
-"CuckooMAdd/5/iterations:1",1,0.477121,0.477101,s,,,,,,0.9,4.1943e+06,0
-"CuckooMult/3/iterations:1",1,0.354035,0.354031,s,,,,,,0.5,4.1943e+06,0
-"CuckooMult/4/iterations:1",1,0.415833,0.415829,s,,,,,,0.7,4.1943e+06,0
-"CuckooMult/5/iterations:1",1,0.455882,0.455851,s,,,,,,0.9,4.1943e+06,0
-"CuckooTab/3/iterations:1",1,0.497843,0.497838,s,,,,,,0.5,4.1943e+06,0
-"CuckooTab/4/iterations:1",1,0.578783,0.578774,s,,,,,,0.7,4.1943e+06,0
-"CuckooTab/5/iterations:1",1,0.62879,0.628777,s,,,,,,0.9,4.1943e+06,0
+"RHMAdd4/3/iterations:1",1,0.231857,0.231855,s,,,,,,0.5,4.1943e+06,0
+"RHMAdd4/4/iterations:1",1,0.344582,0.344559,s,,,,,,0.7,4.1943e+06,0
+"RHMAdd4/5/iterations:1",1,0.583289,0.583266,s,,,,,,0.9,4.1943e+06,0
+"RHMult4/3/iterations:1",1,0.228994,0.228991,s,,,,,,0.5,4.1943e+06,0
+"RHMult4/4/iterations:1",1,0.329219,0.329212,s,,,,,,0.7,4.1943e+06,0
+"RHMult4/5/iterations:1",1,0.579458,0.579417,s,,,,,,0.9,4.1943e+06,0
+"RHMurmur4/3/iterations:1",1,0.246293,0.246275,s,,,,,,0.5,4.1943e+06,0
+"RHMurmur4/4/iterations:1",1,0.34254,0.342527,s,,,,,,0.7,4.1943e+06,0
+"RHMurmur4/5/iterations:1",1,0.599226,0.599211,s,,,,,,0.9,4.1943e+06,0
+"RHTab4/3/iterations:1",1,0.288207,0.288201,s,,,,,,0.5,4.1943e+06,0
+"RHTab4/4/iterations:1",1,0.392578,0.392558,s,,,,,,0.7,4.1943e+06,0
+"RHTab4/5/iterations:1",1,0.680937,0.680918,s,,,,,,0.9,4.1943e+06,0

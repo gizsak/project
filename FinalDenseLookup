@@ -1,4 +1,4 @@
-2022-03-29T21:05:14+01:00
+2022-03-29T23:29:36+01:00
 Running ./FinalDenseLookupSmall
 Run on (10 X 3200 MHz CPU s)
 CPU Caches:
@@ -6,12 +6,42 @@ CPU Caches:
   L1 Instruction 32 KiB (x10)
   L2 Unified 1024 KiB (x10)
   L3 Unified 14080 KiB (x1)
-Load Average: 0.15, 0.03, 0.13
+Load Average: 0.97, 0.52, 0.30
 ***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
 name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"Loadfactor","Totlookup","UnsuccesRatio"
-"CuckooMAdd/0/3/iterations:1",1,0.654929,0.654899,s,,,,,,0.5,5.59241e+06,0.25
-"CuckooMAdd/1/3/iterations:1",1,1.0554,1.05537,s,,,,,,0.5,8.38861e+06,0.5
-"CuckooMAdd/2/3/iterations:1",1,2.17739,2.17731,s,,,,,,0.5,1.67772e+07,0.75
-"CuckooMAdd/0/4/iterations:1",1,0.673929,0.673888,s,,,,,,0.7,5.59241e+06,0.25
-"CuckooMAdd/1/4/iterations:1",1,1.07203,1.072,s,,,,,,0.7,8.38861e+06,0.5
-"CuckooMAdd/2/4/iterations:1",1,2.23279,2.23271,s,,,,,,0.7,1.67772e+07,0.75
+"RHMAdd1/0/3/iterations:1",1,0.268185,0.268182,s,,,,,,0.5,5.59241e+06,0.25
+"RHMAdd1/1/3/iterations:1",1,0.493656,0.493636,s,,,,,,0.5,8.38861e+06,0.5
+"RHMAdd1/2/3/iterations:1",1,1.18474,1.1847,s,,,,,,0.5,1.67772e+07,0.75
+"RHMAdd1/0/4/iterations:1",1,0.283884,0.283874,s,,,,,,0.7,5.59241e+06,0.25
+"RHMAdd1/1/4/iterations:1",1,0.55356,0.553533,s,,,,,,0.7,8.38861e+06,0.5
+"RHMAdd1/2/4/iterations:1",1,1.36016,1.36009,s,,,,,,0.7,1.67772e+07,0.75
+"RHMAdd1/0/5/iterations:1",1,0.383008,0.382984,s,,,,,,0.9,5.59241e+06,0.25
+"RHMAdd1/1/5/iterations:1",1,0.847585,0.847546,s,,,,,,0.9,8.38861e+06,0.5
+"RHMAdd1/2/5/iterations:1",1,2.06851,2.06845,s,,,,,,0.9,1.67772e+07,0.75
+"RHMult1/0/3/iterations:1",1,0.255302,0.255292,s,,,,,,0.5,5.59241e+06,0.25
+"RHMult1/1/3/iterations:1",1,0.469159,0.469146,s,,,,,,0.5,8.38861e+06,0.5
+"RHMult1/2/3/iterations:1",1,1.11152,1.11147,s,,,,,,0.5,1.67772e+07,0.75
+"RHMult1/0/4/iterations:1",1,0.270137,0.270128,s,,,,,,0.7,5.59241e+06,0.25
+"RHMult1/1/4/iterations:1",1,0.529584,0.529567,s,,,,,,0.7,8.38861e+06,0.5
+"RHMult1/2/4/iterations:1",1,1.31395,1.31391,s,,,,,,0.7,1.67772e+07,0.75
+"RHMult1/0/5/iterations:1",1,0.359101,0.359089,s,,,,,,0.9,5.59241e+06,0.25
+"RHMult1/1/5/iterations:1",1,0.821748,0.821725,s,,,,,,0.9,8.38861e+06,0.5
+"RHMult1/2/5/iterations:1",1,2.04062,2.04053,s,,,,,,0.9,1.67772e+07,0.75
+"RHMurmur1/0/3/iterations:1",1,0.403892,0.403874,s,,,,,,0.5,5.59241e+06,0.25
+"RHMurmur1/1/3/iterations:1",1,0.720095,0.720071,s,,,,,,0.5,8.38861e+06,0.5
+"RHMurmur1/2/3/iterations:1",1,1.52261,1.52256,s,,,,,,0.5,1.67772e+07,0.75
+"RHMurmur1/0/4/iterations:1",1,0.573789,0.573767,s,,,,,,0.7,5.59241e+06,0.25
+"RHMurmur1/1/4/iterations:1",1,0.986222,0.98617,s,,,,,,0.7,8.38861e+06,0.5
+"RHMurmur1/2/4/iterations:1",1,2.05007,2.04996,s,,,,,,0.7,1.67772e+07,0.75
+"RHMurmur1/0/5/iterations:1",1,0.86015,0.860108,s,,,,,,0.9,5.59241e+06,0.25
+"RHMurmur1/1/5/iterations:1",1,1.3134,1.31334,s,,,,,,0.9,8.38861e+06,0.5
+"RHMurmur1/2/5/iterations:1",1,2.64257,2.64246,s,,,,,,0.9,1.67772e+07,0.75
+"RHTab1/0/3/iterations:1",1,0.457806,0.457788,s,,,,,,0.5,5.59241e+06,0.25
+"RHTab1/1/3/iterations:1",1,0.801628,0.801617,s,,,,,,0.5,8.38861e+06,0.5
+"RHTab1/2/3/iterations:1",1,1.69412,1.69408,s,,,,,,0.5,1.67772e+07,0.75
+"RHTab1/0/4/iterations:1",1,0.633317,0.633297,s,,,,,,0.7,5.59241e+06,0.25
+"RHTab1/1/4/iterations:1",1,1.08546,1.08543,s,,,,,,0.7,8.38861e+06,0.5
+"RHTab1/2/4/iterations:1",1,2.25908,2.25899,s,,,,,,0.7,1.67772e+07,0.75
+"RHTab1/0/5/iterations:1",1,0.926892,0.926858,s,,,,,,0.9,5.59241e+06,0.25
+"RHTab1/1/5/iterations:1",1,1.39878,1.3987,s,,,,,,0.9,8.38861e+06,0.5
+"RHTab1/2/5/iterations:1",1,2.82239,2.82229,s,,,,,,0.9,1.67772e+07,0.75

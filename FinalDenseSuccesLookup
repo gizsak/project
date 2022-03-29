@@ -1,4 +1,4 @@
-2022-03-29T21:06:15+01:00
+2022-03-29T23:32:45+01:00
 Running ./FinalDenseSuccesLookupSmall
 Run on (10 X 3200 MHz CPU s)
 CPU Caches:
@@ -6,11 +6,18 @@ CPU Caches:
   L1 Instruction 32 KiB (x10)
   L2 Unified 1024 KiB (x10)
   L3 Unified 14080 KiB (x1)
-Load Average: 0.69, 0.21, 0.19
+Load Average: 1.00, 0.75, 0.43
 ***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
 name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"Loadfactor","Totlookup","UnsuccesRatio"
-"CuckooMAdd/3/iterations:1",1,0.341304,0.341291,s,,,,,,0.5,4.1943e+06,0
-"CuckooMAdd/4/iterations:1",1,0.404219,0.404198,s,,,,,,0.7,4.1943e+06,0
-"CuckooMAdd/5/iterations:1",1,0.455301,0.455298,s,,,,,,0.9,4.1943e+06,0
-"CuckooMult/3/iterations:1",1,0.324871,0.324868,s,,,,,,0.5,4.1943e+06,0
-"CuckooMult/4/iterations:1",1,0.429729,0.429725,s,,,,,,0.7,4.1943e+06,0
+"RHMAdd4/3/iterations:1",1,0.148852,0.148851,s,,,,,,0.5,4.1943e+06,0
+"RHMAdd4/4/iterations:1",1,0.148555,0.148553,s,,,,,,0.7,4.1943e+06,0
+"RHMAdd4/5/iterations:1",1,0.162777,0.162768,s,,,,,,0.9,4.1943e+06,0
+"RHMult4/3/iterations:1",1,0.146563,0.146547,s,,,,,,0.5,4.1943e+06,0
+"RHMult4/4/iterations:1",1,0.145252,0.145243,s,,,,,,0.7,4.1943e+06,0
+"RHMult4/5/iterations:1",1,0.158935,0.158934,s,,,,,,0.9,4.1943e+06,0
+"RHMurmur4/3/iterations:1",1,0.245583,0.24557,s,,,,,,0.5,4.1943e+06,0
+"RHMurmur4/4/iterations:1",1,0.348159,0.348148,s,,,,,,0.7,4.1943e+06,0
+"RHMurmur4/5/iterations:1",1,0.590436,0.590425,s,,,,,,0.9,4.1943e+06,0
+"RHTab4/3/iterations:1",1,0.281524,0.281521,s,,,,,,0.5,4.1943e+06,0
+"RHTab4/4/iterations:1",1,0.385616,0.385585,s,,,,,,0.7,4.1943e+06,0
+"RHTab4/5/iterations:1",1,0.624212,0.624186,s,,,,,,0.9,4.1943e+06,0
