@@ -201,4 +201,30 @@ BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, MultiplyAddShift, BulkAlloca
 
 BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("Chained24Tab")->Ranges({{0, 2}, {3, 3}})->Unit(benchmark::kSecond);
 
+/*
+BENCHMARK(lookupBench<RH<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMult1")->Ranges({{0, 2}, {3, 4}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<RH<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMult1")->Ranges({{3, 4}, {3, 4}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<RH<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMult1")->Ranges({{0, 2}, {5, 5}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<RH<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMult1")->Ranges({{3, 4}, {5, 5}})->Unit(benchmark::kSecond);
+
+BENCHMARK(lookupBench<RH<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMurmur1")->Ranges({{0, 2}, {3, 4}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<RH<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMurmur1")->Ranges({{3, 4}, {3, 4}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<RH<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMurmur1")->Ranges({{0, 2}, {5, 5}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<RH<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->Name("RHMurmur1")->Ranges({{3, 4}, {5, 5}})->Unit(benchmark::kSecond);
+*/
+BENCHMARK(lookupBench<MCuckoo<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("CuckooMult")->Ranges({{0, 2}, {3, 4}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<MCuckoo<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("CuckooMult")->Ranges({{3, 4}, {3, 4}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<MCuckoo<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("CuckooMult")->Ranges({{0, 2}, {5, 5}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<MCuckoo<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("CuckooMult")->Ranges({{3, 4}, {5, 5}})->Unit(benchmark::kSecond);
+/*
+BENCHMARK(lookupBench<Quadraticprobing<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPMultF")->Ranges({{0, 2}, {3, 4}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Quadraticprobing<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPMultF")->Ranges({{3, 4}, {3, 4}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Quadraticprobing<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPMultF")->Ranges({{0, 2}, {5, 5}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Quadraticprobing<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPMultF")->Ranges({{3, 4}, {5, 5}})->Unit(benchmark::kSecond);
+
+BENCHMARK(lookupBench<Quadraticprobing<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPMurmurF")->Ranges({{0, 2}, {3, 4}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Quadraticprobing<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPMurmurF")->Ranges({{3, 4}, {3, 4}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Quadraticprobing<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPMurmurF")->Ranges({{0, 2}, {5, 5}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Quadraticprobing<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->Name("QPMurmurF")->Ranges({{3, 4}, {5, 5}})->Unit(benchmark::kSecond);
+*/
 BENCHMARK_MAIN();

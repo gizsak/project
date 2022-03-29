@@ -196,4 +196,78 @@ BENCHMARK(insertionBench<Chained24<uint64_t, uint64_t, TabulationHashing, BulkAl
 //BENCHMARK(insertionBench<MCuckoo<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Name("CuckooMultAdd")->DenseRange(3, 4)->Unit(benchmark::kSecond);
 //BENCHMARK(insertionBench<MCuckoo<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Name("CuckooTab")->DenseRange(3, 4)->Unit(benchmark::kSecond);
 
+
+BENCHMARK(insertionBench<RH<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("RHMult")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<RH<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("RHMurmur")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<RH<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("RHMAdd")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<RH<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("RHTab")->DenseRange(5, 5)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<Chained8<uint64_t, uint64_t, MultiplyShift, Allocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("Chained8Mult")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Chained8<uint64_t, uint64_t, Murmur64, Allocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("Chained8Murmur")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Chained24<uint64_t, uint64_t, MultiplyShift, Allocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("Chained24Mult")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Chained24<uint64_t, uint64_t, Murmur64, Allocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("Chained24Murmur")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<Chained8<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("Chained8MAdd")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Chained8<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("Chained8Tab")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Chained24<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("Chained24MAdd")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Chained24<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("Chained24Tab")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+
+BENCHMARK(insertionBench<Chained8<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("BulkCh8Mult")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Chained8<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("BulkCh8Murmur")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Chained24<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("BulkCh4Mult")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+BENCHMARK(insertionBench<Chained24<uint64_t, uint64_t, Murmur64, BulkAllocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("BulkCh24Murmur")->DenseRange(0, 2)->Unit(benchmark::kSecond);
+
+//BENCHMARK(insertionBench<MCuckoo<uint64_t, uint64_t, MultiplyShift, BulkAllocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("CuckooMult")->DenseRange(3, 5)->Unit(benchmark::kSecond);
+//BENCHMARK(insertionBench<MCuckoo<uint64_t, uint64_t, MultiplyAddShift, BulkAllocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("CuckooMAdd")->DenseRange(3, 5)->Unit(benchmark::kSecond);
+//BENCHMARK(insertionBench<MCuckoo<uint64_t, uint64_t, TabulationHashing, BulkAllocator<uint64_t, uint64_t>>>)->Iterations(1)->Name("CuckooTab")->DenseRange(3, 5)->Unit(benchmark::kSecond);
+
+BENCHMARK(lookupBench<Chained8<uint64_t, uint64_t, MultiplyAddShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained8MultAdd")->Ranges({{0, 2}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained8<uint64_t, uint64_t, MultiplyAddShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained8MultAdd")->Ranges({{3, 3}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained8<uint64_t, uint64_t, MultiplyAddShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained8MultAdd")->Ranges({{4, 4}, {0, 2}})->Unit(benchmark::kSecond);
+
+BENCHMARK(lookupBench<Chained8<uint64_t, uint64_t, TabulationHashing, Allocator<uint64_t, uint64_t>>>)->Name("Chained8Tab")->Ranges({{0, 2}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained8<uint64_t, uint64_t, TabulationHashing, Allocator<uint64_t, uint64_t>>>)->Name("Chained8Tab")->Ranges({{3, 3}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained8<uint64_t, uint64_t, TabulationHashing, Allocator<uint64_t, uint64_t>>>)->Name("Chained8Tab")->Ranges({{4, 4}, {0, 2}})->Unit(benchmark::kSecond);
+
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, MultiplyAddShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained24MultAdd")->Ranges({{0, 2}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, MultiplyAddShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained24MultAdd")->Ranges({{3, 3}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, MultiplyAddShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained24MultAdd")->Ranges({{4, 4}, {0, 2}})->Unit(benchmark::kSecond);
+
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, TabulationHashing, Allocator<uint64_t, uint64_t>>>)->Name("Chained24Tab")->Ranges({{0, 2}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, TabulationHashing, Allocator<uint64_t, uint64_t>>>)->Name("Chained24Tab")->Ranges({{3, 3}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, TabulationHashing, Allocator<uint64_t, uint64_t>>>)->Name("Chained24Tab")->Ranges({{4, 4}, {0, 2}})->Unit(benchmark::kSecond);
+
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, MultiplyAddShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained24MultAdd")->Ranges({{0, 2}, {3, 3}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, MultiplyAddShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained24MultAdd")->Ranges({{3, 3}, {3, 3}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, MultiplyAddShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained24MultAdd")->Ranges({{4, 4}, {3, 3}})->Unit(benchmark::kSecond);
+
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, TabulationHashing, Allocator<uint64_t, uint64_t>>>)->Name("Chained24Tab")->Ranges({{0, 2}, {3, 3}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, TabulationHashing, Allocator<uint64_t, uint64_t>>>)->Name("Chained24Tab")->Ranges({{3, 3}, {3, 3}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, TabulationHashing, Allocator<uint64_t, uint64_t>>>)->Name("Chained24Tab")->Ranges({{4, 4}, {3, 3}})->Unit(benchmark::kSecond);
+
+BENCHMARK(lookupBench<Chained8<uint64_t, uint64_t, MultiplyShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained8MAdd")->Ranges({{0, 2}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained8<uint64_t, uint64_t, MultiplyShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained8MAdd")->Ranges({{3, 3}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained8<uint64_t, uint64_t, MultiplyShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained8MAdd")->Ranges({{4, 4}, {0, 2}})->Unit(benchmark::kSecond);
+
+BENCHMARK(lookupBench<Chained8<uint64_t, uint64_t, Murmur64, Allocator<uint64_t, uint64_t>>>)->Name("Chained8Murmur")->Ranges({{0, 2}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained8<uint64_t, uint64_t, Murmur64, Allocator<uint64_t, uint64_t>>>)->Name("Chained8Murmur")->Ranges({{3, 3}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained8<uint64_t, uint64_t, Murmur64, Allocator<uint64_t, uint64_t>>>)->Name("Chained8Murmur")->Ranges({{4, 4}, {0, 2}})->Unit(benchmark::kSecond);
+
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, MultiplyShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained24MAdd")->Ranges({{0, 2}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, MultiplyShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained24MAdd")->Ranges({{3, 3}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, MultiplyShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained24MAdd")->Ranges({{4, 4}, {0, 2}})->Unit(benchmark::kSecond);
+
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, Murmur64, Allocator<uint64_t, uint64_t>>>)->Name("Chained24Murmur")->Ranges({{0, 2}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, Murmur64, Allocator<uint64_t, uint64_t>>>)->Name("Chained24Murmur")->Ranges({{3, 3}, {0, 2}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, Murmur64, Allocator<uint64_t, uint64_t>>>)->Name("Chained24Murmur")->Ranges({{4, 4}, {0, 2}})->Unit(benchmark::kSecond);
+
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, MultiplyShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained24Mdd")->Ranges({{0, 2}, {3, 3}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, MultiplyShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained24MAdd")->Ranges({{3, 3}, {3, 3}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, MultiplyShift, Allocator<uint64_t, uint64_t>>>)->Name("Chained24MAdd")->Ranges({{4, 4}, {3, 3}})->Unit(benchmark::kSecond);
+
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, Murmur64, Allocator<uint64_t, uint64_t>>>)->Name("Chained24Murmur")->Ranges({{0, 2}, {3, 3}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, Murmur64, Allocator<uint64_t, uint64_t>>>)->Name("Chained24Murmur")->Ranges({{3, 3}, {3, 3}})->Unit(benchmark::kSecond);
+BENCHMARK(lookupBench<Chained24<uint64_t, uint64_t, Murmur64, Allocator<uint64_t, uint64_t>>>)->Name("Chained24Murmur")->Ranges({{4, 4}, {3, 3}})->Unit(benchmark::kSecond);
+
+
 BENCHMARK_MAIN();
