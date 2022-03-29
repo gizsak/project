@@ -1,0 +1,87 @@
+2022-03-29T15:03:24+01:00
+Running ./FinalDenseUnSuccesLookup24
+Run on (10 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x10)
+  L1 Instruction 32 KiB (x10)
+  L2 Unified 1024 KiB (x10)
+  L3 Unified 14080 KiB (x1)
+Load Average: 0.29, 0.08, 0.02
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"Loadfactor","Totlookup","UnsuccesRatio"
+"LPMAdd/0/iterations:1",1,0.17752,0.177509,s,,,,,,0.25,4.1943e+06,100
+"LPMAdd/1/iterations:1",1,0.198699,0.198689,s,,,,,,0.35,4.1943e+06,100
+"LPMAdd/2/iterations:1",1,0.221111,0.221109,s,,,,,,0.45,4.1943e+06,100
+"LPMAdd/3/iterations:1",1,0.236748,0.23673,s,,,,,,0.5,4.1943e+06,100
+"LPMAdd/4/iterations:1",1,0.281505,0.281494,s,,,,,,0.7,4.1943e+06,100
+"LPMAdd/5/iterations:1",1,0.630843,0.630822,s,,,,,,0.9,4.1943e+06,100
+"LPMult/0/iterations:1",1,0.175688,0.175673,s,,,,,,0.25,4.1943e+06,100
+"LPMult/1/iterations:1",1,0.197257,0.19725,s,,,,,,0.35,4.1943e+06,100
+"LPMult/2/iterations:1",1,0.218935,0.21892,s,,,,,,0.45,4.1943e+06,100
+"LPMult/3/iterations:1",1,0.233613,0.23359,s,,,,,,0.5,4.1943e+06,100
+"LPMult/4/iterations:1",1,0.279282,0.279263,s,,,,,,0.7,4.1943e+06,100
+"LPMult/5/iterations:1",1,0.627716,0.627686,s,,,,,,0.9,4.1943e+06,100
+"LPMurmur/0/iterations:1",1,0.20054,0.20053,s,,,,,,0.25,4.1943e+06,100
+"LPMurmur/1/iterations:1",1,0.237233,0.237227,s,,,,,,0.35,4.1943e+06,100
+"LPMurmur/2/iterations:1",1,0.300018,0.300015,s,,,,,,0.45,4.1943e+06,100
+"LPMurmur/3/iterations:1",1,0.33969,0.339678,s,,,,,,0.5,4.1943e+06,100
+"LPMurmur/4/iterations:1",1,0.596805,0.596776,s,,,,,,0.7,4.1943e+06,100
+"LPMurmur/5/iterations:1",1,1.91896,1.91888,s,,,,,,0.9,4.1943e+06,100
+"LPTab/0/iterations:1",1,0.242103,0.242093,s,,,,,,0.25,4.1943e+06,100
+"LPTab/1/iterations:1",1,0.276186,0.276175,s,,,,,,0.35,4.1943e+06,100
+"LPTab/2/iterations:1",1,0.336812,0.336792,s,,,,,,0.45,4.1943e+06,100
+"LPTab/3/iterations:1",1,0.378181,0.378164,s,,,,,,0.5,4.1943e+06,100
+"LPTab/4/iterations:1",1,0.634198,0.634171,s,,,,,,0.7,4.1943e+06,100
+"LPTab/5/iterations:1",1,2.16169,2.16158,s,,,,,,0.9,4.1943e+06,100
+"Chained8MAdd/0/iterations:1",1,0.198294,0.198292,s,,,,,,0.25,4.1943e+06,100
+"Chained8MAdd/1/iterations:1",1,0.218159,0.218156,s,,,,,,0.35,4.1943e+06,100
+"Chained8MAdd/2/iterations:1",1,0.308011,0.308,s,,,,,,0.45,4.1943e+06,100
+"Chained8Mult/0/iterations:1",1,0.193342,0.193335,s,,,,,,0.25,4.1943e+06,100
+"Chained8Mult/1/iterations:1",1,0.210943,0.210936,s,,,,,,0.35,4.1943e+06,100
+"Chained8Mult/2/iterations:1",1,0.294025,0.294007,s,,,,,,0.45,4.1943e+06,100
+"Chained8Murmur/0/iterations:1",1,0.219693,0.219691,s,,,,,,0.25,4.1943e+06,100
+"Chained8Murmur/1/iterations:1",1,0.24476,0.244758,s,,,,,,0.35,4.1943e+06,100
+"Chained8Murmur/2/iterations:1",1,0.349885,0.349881,s,,,,,,0.45,4.1943e+06,100
+"Chained8Tab/0/iterations:1",1,0.269405,0.269395,s,,,,,,0.25,4.1943e+06,100
+"Chained8Tab/1/iterations:1",1,0.298972,0.298962,s,,,,,,0.35,4.1943e+06,100
+"Chained8Tab/2/iterations:1",1,0.427864,0.42786,s,,,,,,0.45,4.1943e+06,100
+"Chained24MAdd/0/iterations:1",1,0.172889,0.172877,s,,,,,,0.25,4.1943e+06,100
+"Chained24MAdd/1/iterations:1",1,0.241897,0.241895,s,,,,,,0.35,4.1943e+06,100
+"Chained24MAdd/2/iterations:1",1,0.273546,0.273535,s,,,,,,0.45,4.1943e+06,100
+"Chained24MAdd/3/iterations:1",1,0.298623,0.298607,s,,,,,,0.5,4.1943e+06,100
+"Chained24Mult/0/iterations:1",1,0.170333,0.170322,s,,,,,,0.25,4.1943e+06,100
+"Chained24Mult/1/iterations:1",1,0.2413,0.241284,s,,,,,,0.35,4.1943e+06,100
+"Chained24Mult/2/iterations:1",1,0.272375,0.272365,s,,,,,,0.45,4.1943e+06,100
+"Chained24Mult/3/iterations:1",1,0.297396,0.29737,s,,,,,,0.5,4.1943e+06,100
+"Chained24Murmur/0/iterations:1",1,0.260716,0.260714,s,,,,,,0.25,4.1943e+06,100
+"Chained24Murmur/1/iterations:1",1,0.326556,0.326546,s,,,,,,0.35,4.1943e+06,100
+"Chained24Murmur/2/iterations:1",1,0.396944,0.396928,s,,,,,,0.45,4.1943e+06,100
+"Chained24Murmur/3/iterations:1",1,0.433599,0.433584,s,,,,,,0.5,4.1943e+06,100
+"Chained24Tab/0/iterations:1",1,0.310667,0.31065,s,,,,,,0.25,4.1943e+06,100
+"Chained24Tab/1/iterations:1",1,0.389747,0.389718,s,,,,,,0.35,4.1943e+06,100
+"Chained24Tab/2/iterations:1",1,0.47582,0.475793,s,,,,,,0.45,4.1943e+06,100
+"Chained24Tab/3/iterations:1",1,0.517535,0.517508,s,,,,,,0.5,4.1943e+06,100
+"QPMAddH/3/iterations:1",1,0.228674,0.228658,s,,,,,,0.5,4.1943e+06,100
+"QPMAddH/4/iterations:1",1,0.446334,0.446325,s,,,,,,0.7,4.1943e+06,100
+"QPMAddH/5/iterations:1",1,0.890782,0.890725,s,,,,,,0.9,4.1943e+06,100
+"QPMultH/3/iterations:1",1,0.219961,0.219959,s,,,,,,0.5,4.1943e+06,100
+"QPMultH/4/iterations:1",1,0.419354,0.41935,s,,,,,,0.7,4.1943e+06,100
+"QPMultH/5/iterations:1",1,0.87924,0.879207,s,,,,,,0.9,4.1943e+06,100
+"QPMurmurH/3/iterations:1",1,0.352373,0.35236,s,,,,,,0.5,4.1943e+06,100
+"QPMurmurH/4/iterations:1",1,0.547842,0.547829,s,,,,,,0.7,4.1943e+06,100
+"QPMurmurH/5/iterations:1",1,0.948134,0.948085,s,,,,,,0.9,4.1943e+06,100
+"QPTabH/3/iterations:1",1,0.385605,0.385576,s,,,,,,0.5,4.1943e+06,100
+"QPTabH/4/iterations:1",1,0.531965,0.531931,s,,,,,,0.7,4.1943e+06,100
+"QPTabH/5/iterations:1",1,0.95209,0.952023,s,,,,,,0.9,4.1943e+06,100
+"RHMAdd1/3/iterations:1",1,0.242224,0.242207,s,,,,,,0.5,4.1943e+06,100
+"RHMAdd1/4/iterations:1",1,0.284347,0.284337,s,,,,,,0.7,4.1943e+06,100
+"RHMAdd1/5/iterations:1",1,0.308548,0.308539,s,,,,,,0.9,4.1943e+06,100
+"RHMult1/3/iterations:1",1,0.236284,0.236273,s,,,,,,0.5,4.1943e+06,100
+"RHMult1/4/iterations:1",1,0.275217,0.275201,s,,,,,,0.7,4.1943e+06,100
+"RHMult1/5/iterations:1",1,0.292612,0.292593,s,,,,,,0.9,4.1943e+06,100
+"RHMurmur1/3/iterations:1",1,0.317302,0.317286,s,,,,,,0.5,4.1943e+06,100
+"RHMurmur1/4/iterations:1",1,0.558592,0.558566,s,,,,,,0.7,4.1943e+06,100
+"RHMurmur1/5/iterations:1",1,0.977166,0.977126,s,,,,,,0.9,4.1943e+06,100
+"RHTab1/3/iterations:1",1,0.413177,0.413157,s,,,,,,0.5,4.1943e+06,100
+"RHTab1/4/iterations:1",1,0.642641,0.642628,s,,,,,,0.7,4.1943e+06,100
+"RHTab1/5/iterations:1",1,1.1497,1.14966,s,,,,,,0.9,4.1943e+06,100

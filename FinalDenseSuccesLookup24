@@ -1,0 +1,35 @@
+2022-03-29T16:30:27+01:00
+Running ./FinalDenseSuccesLookupSmall
+Run on (10 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x10)
+  L1 Instruction 32 KiB (x10)
+  L2 Unified 1024 KiB (x10)
+  L3 Unified 14080 KiB (x1)
+Load Average: 1.01, 1.01, 0.88
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"Loadfactor","Totlookup","UnsuccesRatio"
+"QPMAddT/3/iterations:1",1,0.0948835,0.0948818,s,,,,,,0.5,2.09715e+06,0
+"QPMAddT/4/iterations:1",1,0.134282,0.13428,s,,,,,,0.7,2.93601e+06,0
+"QPMAddT/5/iterations:1",1,0.200075,0.200073,s,,,,,,0.9,3.77487e+06,0
+"QPMultT/3/iterations:1",1,0.0949588,0.094957,s,,,,,,0.5,2.09715e+06,0
+"QPMultT/4/iterations:1",1,0.137175,0.137166,s,,,,,,0.7,2.93601e+06,0
+"QPMultT/5/iterations:1",1,0.197066,0.197064,s,,,,,,0.9,3.77487e+06,0
+"QPMurmurT/3/iterations:1",1,0.127966,0.127945,s,,,,,,0.5,2.09715e+06,0
+"QPMurmurT/4/iterations:1",1,0.215229,0.215227,s,,,,,,0.7,2.93601e+06,0
+"QPMurmurT/5/iterations:1",1,0.369648,0.369633,s,,,,,,0.9,3.77487e+06,0
+"QPTabT/3/iterations:1",1,0.141271,0.14127,s,,,,,,0.5,2.09715e+06,0
+"QPTabT/4/iterations:1",1,0.233523,0.233515,s,,,,,,0.7,2.93601e+06,0
+"QPTabT/5/iterations:1",1,0.385156,0.385134,s,,,,,,0.9,3.77487e+06,0
+"RHMAdd2/3/iterations:1",1,0.0776868,0.0776794,s,,,,,,0.5,2.09715e+06,0
+"RHMAdd2/4/iterations:1",1,0.111547,0.111546,s,,,,,,0.7,2.93601e+06,0
+"RHMAdd2/5/iterations:1",1,0.153528,0.153519,s,,,,,,0.9,3.77487e+06,0
+"RHMult2/3/iterations:1",1,0.0753078,0.0752927,s,,,,,,0.5,2.09715e+06,0
+"RHMult2/4/iterations:1",1,0.109065,0.109063,s,,,,,,0.7,2.93601e+06,0
+"RHMult2/5/iterations:1",1,0.15069,0.150688,s,,,,,,0.9,3.77487e+06,0
+"RHMurmur2/3/iterations:1",1,0.124619,0.124618,s,,,,,,0.5,2.09715e+06,0
+"RHMurmur2/4/iterations:1",1,0.256332,0.25632,s,,,,,,0.7,2.93601e+06,0
+"RHMurmur2/5/iterations:1",1,0.681236,0.681223,s,,,,,,0.9,3.77487e+06,0
+"RHTab2/3/iterations:1",1,0.143412,0.14341,s,,,,,,0.5,2.09715e+06,0
+"RHTab2/4/iterations:1",1,0.288836,0.288825,s,,,,,,0.7,2.93601e+06,0
+"RHTab2/5/iterations:1",1,0.769256,0.769231,s,,,,,,0.9,3.77487e+06,0
