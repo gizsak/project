@@ -1,0 +1,20 @@
+2022-03-29T17:43:33+01:00
+Running ./FinalSparseSuccesLookupSmall
+Run on (10 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x10)
+  L1 Instruction 32 KiB (x10)
+  L2 Unified 1024 KiB (x10)
+  L3 Unified 14080 KiB (x1)
+Load Average: 0.98, 0.58, 0.37
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"Loadfactor","Totlookup","UnsuccesRatio"
+"CuckooMAdd/3/iterations:1",1,0.183072,0.183063,s,,,,,,0.5,2.09715e+06,0
+"CuckooMAdd/4/iterations:1",1,0.304323,0.304312,s,,,,,,0.7,2.93601e+06,0
+"CuckooMAdd/5/iterations:1",1,0.433505,0.433497,s,,,,,,0.9,3.77487e+06,0
+"CuckooMult/3/iterations:1",1,0.180112,0.180087,s,,,,,,0.5,2.09715e+06,0
+"CuckooMult/4/iterations:1",1,0.295461,0.295451,s,,,,,,0.7,2.93601e+06,0
+"CuckooMult/5/iterations:1",1,0.417661,0.41764,s,,,,,,0.9,3.77487e+06,0
+"CuckooTab/3/iterations:1",1,0.252708,0.252679,s,,,,,,0.5,2.09715e+06,0
+"CuckooTab/4/iterations:1",1,0.407977,0.407972,s,,,,,,0.7,2.93601e+06,0
+"CuckooTab/5/iterations:1",1,0.569307,0.569289,s,,,,,,0.9,3.77487e+06,0
