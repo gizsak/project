@@ -1,0 +1,87 @@
+2022-03-29T19:32:50+01:00
+Running ./FinalSparseSuccesLookupSmall
+Run on (10 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x10)
+  L1 Instruction 32 KiB (x10)
+  L2 Unified 1024 KiB (x10)
+  L3 Unified 14080 KiB (x1)
+Load Average: 1.08, 0.97, 0.64
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"Loadfactor","Totlookup","UnsuccesRatio"
+"LPMAdd/0/iterations:1",1,0.200857,0.200855,s,,,,,,0.25,4.1943e+06,0
+"LPMAdd/1/iterations:1",1,0.210239,0.210237,s,,,,,,0.35,4.1943e+06,0
+"LPMAdd/2/iterations:1",1,0.223467,0.223457,s,,,,,,0.45,4.1943e+06,0
+"LPMAdd/3/iterations:1",1,0.232092,0.23209,s,,,,,,0.5,4.1943e+06,0
+"LPMAdd/4/iterations:1",1,0.285672,0.285662,s,,,,,,0.7,4.1943e+06,0
+"LPMAdd/5/iterations:1",1,0.437682,0.437668,s,,,,,,0.9,4.1943e+06,0
+"LPMult/0/iterations:1",1,0.18436,0.184358,s,,,,,,0.25,4.1943e+06,0
+"LPMult/1/iterations:1",1,0.196203,0.196201,s,,,,,,0.35,4.1943e+06,0
+"LPMult/2/iterations:1",1,0.211405,0.211403,s,,,,,,0.45,4.1943e+06,0
+"LPMult/3/iterations:1",1,0.220376,0.220373,s,,,,,,0.5,4.1943e+06,0
+"LPMult/4/iterations:1",1,0.277615,0.277593,s,,,,,,0.7,4.1943e+06,0
+"LPMult/5/iterations:1",1,0.4332,0.433169,s,,,,,,0.9,4.1943e+06,0
+"LPMurmur/0/iterations:1",1,0.208312,0.2083,s,,,,,,0.25,4.1943e+06,0
+"LPMurmur/1/iterations:1",1,0.217828,0.217805,s,,,,,,0.35,4.1943e+06,0
+"LPMurmur/2/iterations:1",1,0.230919,0.230916,s,,,,,,0.45,4.1943e+06,0
+"LPMurmur/3/iterations:1",1,0.240472,0.240462,s,,,,,,0.5,4.1943e+06,0
+"LPMurmur/4/iterations:1",1,0.297408,0.297397,s,,,,,,0.7,4.1943e+06,0
+"LPMurmur/5/iterations:1",1,0.46725,0.467205,s,,,,,,0.9,4.1943e+06,0
+"LPTab/0/iterations:1",1,0.232291,0.232289,s,,,,,,0.25,4.1943e+06,0
+"LPTab/1/iterations:1",1,0.242788,0.242776,s,,,,,,0.35,4.1943e+06,0
+"LPTab/2/iterations:1",1,0.256444,0.256441,s,,,,,,0.45,4.1943e+06,0
+"LPTab/3/iterations:1",1,0.264963,0.264947,s,,,,,,0.5,4.1943e+06,0
+"LPTab/4/iterations:1",1,0.321693,0.321679,s,,,,,,0.7,4.1943e+06,0
+"LPTab/5/iterations:1",1,0.499182,0.499152,s,,,,,,0.9,4.1943e+06,0
+"Chained8MAdd/0/iterations:1",1,0.267429,0.267427,s,,,,,,0.25,4.1943e+06,0
+"Chained8MAdd/1/iterations:1",1,0.283002,0.282992,s,,,,,,0.35,4.1943e+06,0
+"Chained8MAdd/2/iterations:1",1,0.348376,0.348341,s,,,,,,0.45,4.1943e+06,0
+"Chained8Mult/0/iterations:1",1,0.266094,0.266087,s,,,,,,0.25,4.1943e+06,0
+"Chained8Mult/1/iterations:1",1,0.283915,0.283909,s,,,,,,0.35,4.1943e+06,0
+"Chained8Mult/2/iterations:1",1,0.345509,0.345498,s,,,,,,0.45,4.1943e+06,0
+"Chained8Murmur/0/iterations:1",1,0.304417,0.304402,s,,,,,,0.25,4.1943e+06,0
+"Chained8Murmur/1/iterations:1",1,0.323388,0.323373,s,,,,,,0.35,4.1943e+06,0
+"Chained8Murmur/2/iterations:1",1,0.394531,0.394519,s,,,,,,0.45,4.1943e+06,0
+"Chained8Tab/0/iterations:1",1,0.389206,0.389189,s,,,,,,0.25,4.1943e+06,0
+"Chained8Tab/1/iterations:1",1,0.410462,0.410448,s,,,,,,0.35,4.1943e+06,0
+"Chained8Tab/2/iterations:1",1,0.493223,0.4932,s,,,,,,0.45,4.1943e+06,0
+"Chained24MAdd/0/iterations:1",1,0.251016,0.251003,s,,,,,,0.25,4.1943e+06,0
+"Chained24MAdd/1/iterations:1",1,0.287564,0.287555,s,,,,,,0.35,4.1943e+06,0
+"Chained24MAdd/2/iterations:1",1,0.318686,0.318661,s,,,,,,0.45,4.1943e+06,0
+"Chained24MAdd/3/iterations:1",1,0.332518,0.332503,s,,,,,,0.5,4.1943e+06,0
+"Chained24Mult/0/iterations:1",1,0.250945,0.250937,s,,,,,,0.25,4.1943e+06,0
+"Chained24Mult/1/iterations:1",1,0.284168,0.284164,s,,,,,,0.35,4.1943e+06,0
+"Chained24Mult/2/iterations:1",1,0.314062,0.314037,s,,,,,,0.45,4.1943e+06,0
+"Chained24Mult/3/iterations:1",1,0.327623,0.327597,s,,,,,,0.5,4.1943e+06,0
+"Chained24Murmur/0/iterations:1",1,0.255802,0.255781,s,,,,,,0.25,4.1943e+06,0
+"Chained24Murmur/1/iterations:1",1,0.291257,0.291254,s,,,,,,0.35,4.1943e+06,0
+"Chained24Murmur/2/iterations:1",1,0.321465,0.32144,s,,,,,,0.45,4.1943e+06,0
+"Chained24Murmur/3/iterations:1",1,0.335638,0.335594,s,,,,,,0.5,4.1943e+06,0
+"Chained24Tab/0/iterations:1",1,0.304337,0.304319,s,,,,,,0.25,4.1943e+06,0
+"Chained24Tab/1/iterations:1",1,0.344698,0.344695,s,,,,,,0.35,4.1943e+06,0
+"Chained24Tab/2/iterations:1",1,0.379183,0.379179,s,,,,,,0.45,4.1943e+06,0
+"Chained24Tab/3/iterations:1",1,0.396415,0.396411,s,,,,,,0.5,4.1943e+06,0
+"QPMAddH/3/iterations:1",1,0.24088,0.240862,s,,,,,,0.5,4.1943e+06,0
+"QPMAddH/4/iterations:1",1,0.303816,0.303785,s,,,,,,0.7,4.1943e+06,0
+"QPMAddH/5/iterations:1",1,0.40905,0.409037,s,,,,,,0.9,4.1943e+06,0
+"QPMultH/3/iterations:1",1,0.241129,0.241127,s,,,,,,0.5,4.1943e+06,0
+"QPMultH/4/iterations:1",1,0.303696,0.303693,s,,,,,,0.7,4.1943e+06,0
+"QPMultH/5/iterations:1",1,0.406435,0.406427,s,,,,,,0.9,4.1943e+06,0
+"QPMurmurH/3/iterations:1",1,0.2588,0.258791,s,,,,,,0.5,4.1943e+06,0
+"QPMurmurH/4/iterations:1",1,0.319677,0.319666,s,,,,,,0.7,4.1943e+06,0
+"QPMurmurH/5/iterations:1",1,0.416056,0.416031,s,,,,,,0.9,4.1943e+06,0
+"QPTabH/3/iterations:1",1,0.291541,0.291538,s,,,,,,0.5,4.1943e+06,0
+"QPTabH/4/iterations:1",1,0.351385,0.351368,s,,,,,,0.7,4.1943e+06,0
+"QPTabH/5/iterations:1",1,0.44752,0.447501,s,,,,,,0.9,4.1943e+06,0
+"RHMAdd1/3/iterations:1",1,0.208768,0.208766,s,,,,,,0.5,4.1943e+06,0
+"RHMAdd1/4/iterations:1",1,0.319127,0.319108,s,,,,,,0.7,4.1943e+06,0
+"RHMAdd1/5/iterations:1",1,0.775279,0.77525,s,,,,,,0.9,4.1943e+06,0
+"RHMult1/3/iterations:1",1,0.207476,0.20746,s,,,,,,0.5,4.1943e+06,0
+"RHMult1/4/iterations:1",1,0.32774,0.327713,s,,,,,,0.7,4.1943e+06,0
+"RHMult1/5/iterations:1",1,0.839789,0.839753,s,,,,,,0.9,4.1943e+06,0
+"RHMurmur1/3/iterations:1",1,0.219777,0.219767,s,,,,,,0.5,4.1943e+06,0
+"RHMurmur1/4/iterations:1",1,0.326904,0.326901,s,,,,,,0.7,4.1943e+06,0
+"RHMurmur1/5/iterations:1",1,0.877017,0.877008,s,,,,,,0.9,4.1943e+06,0
+"RHTab1/3/iterations:1",1,0.29753,0.297527,s,,,,,,0.5,4.1943e+06,0
+"RHTab1/4/iterations:1",1,0.455853,0.455848,s,,,,,,0.7,4.1943e+06,0
+"RHTab1/5/iterations:1",1,1.02707,1.02704,s,,,,,,0.9,4.1943e+06,0
